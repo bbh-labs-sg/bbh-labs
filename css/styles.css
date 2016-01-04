@@ -1,0 +1,117 @@
+* { margin:0; padding:0; }
+
+html, body { width:100%; height:100%; 
+font-family: 'Open Sans', sans-serif;
+background-color: grey;}
+
+ul, li{
+  list-style-type: none;
+}
+
+canvas { display:block; }
+
+canvas#dots {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    opacity: 1;
+}
+
+.Main{
+  z-index: 1000;
+  position: absolute;
+  bottom: 10%;
+  left: 5%
+  
+}
+
+.Main_logo img{
+  max-width: 200px;
+  max-height: 
+}
+
+.Main_description{
+  max-width: 45%;
+  color: white;
+  font-size: 10pt;
+}
+
+.Main_menu li {
+  float: left;
+  padding-right: 40px;
+}
+
+.Main_menu li h3{
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+
+.Main_slideshow,
+.Main_slideshow:after { 
+    position: fixed;
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: 0; 
+    background-color: #000;
+ 
+}
+.Main_slideshow:after { 
+    content: '';
+    background: transparent url(../images/homepage/pattern.png) repeat top left; 
+
+}
+
+.Main_slideshow li span { 
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    color: black;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: none;
+    opacity: 0;
+    z-index: 0;
+    animation: imageAnimation 24s linear infinite 0s; 
+}
+
+
+.Main_slideshow li:nth-child(1) span { 
+    background-image: url(../images/homepage/image01.jpg) 
+}
+.Main_slideshow li:nth-child(2) span { 
+    background-image: url(../images/homepage/image02.jpg);
+    animation-delay: 6s; 
+}
+.Main_slideshow li:nth-child(3) span { 
+    background-image: url(../images/homepage/image03.jpg);
+    animation-delay: 12s; 
+}
+.Main_slideshow li:nth-child(4) span { 
+    background-image: url(../images/homepage/image04.jpg);
+    animation-delay: 18s; 
+}
+
+
+
+@keyframes imageAnimation { 
+    0% { opacity: 0; animation-timing-function: ease-in; }
+    8% { opacity: 1; animation-timing-function: ease-out; }
+    17% { opacity: 1;transform: scale(1.1);color: #555}
+    25% { opacity: 0 ;transform: scale(1.1)}
+    100% { opacity: 0 ;transform: scale(1.1)}
+}
+
+
+.no-cssanimations .Main_slideshow li span{
+  opacity: 1;
+}
+
